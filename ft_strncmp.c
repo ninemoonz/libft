@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 14:50:45 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/07 15:49:11 by kkweon           ###   ########.fr       */
+/*   Created: 2025/10/07 16:51:50 by kkweon            #+#    #+#             */
+/*   Updated: 2025/10/07 16:57:11 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (i < n - 1)
 	{
-		i++;
+		if (s1[i] == s2[i])
+		{
+			i++;
+		}
+		else
+		{
+			return (s1[i] - s2[i]);
+		}
 	}
-	return (i);
+	return (s1[i] - s2[i]);
 }
