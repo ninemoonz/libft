@@ -6,14 +6,9 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 14:38:03 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/08 16:43:20 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/08 17:47:14 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <bsd/string.h>
-#include <ctype.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 int	ft_strlen(char *str)
 {
