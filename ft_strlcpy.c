@@ -6,18 +6,34 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 17:11:40 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/07 17:17:19 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/08 12:45:13 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
-size_t	ft_strlcpy(char *dest, char *src, unsigned int destsize)
+int	ft_strlen(char *str)
 {
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
 
-int	main(void)
+unsigned int	ft_strlcpy(char *dst, char *src, unsigned int size)
 {
-	return (0);
+	int				i;
+	unsigned int	srclen;
+
+	i = 0;
+	srclen = ft_strlen(src);
+	while (i < (size - 1))
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (srclen);
 }
