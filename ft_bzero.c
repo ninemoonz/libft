@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 11:01:06 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/09 11:40:14 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/09 14:31:12 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_bzero(void *str, unsigned int n)
 	{
 		*char_p = 0;
 		char_p++;
-		printf("%p\n", char_p);
 		n--;
 	}
 }
