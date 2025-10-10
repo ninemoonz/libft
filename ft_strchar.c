@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/10 13:48:14 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/10 13:53:33 by kkweon           ###   ########.fr       */
+/*   Created: 2025/10/10 13:53:47 by kkweon            #+#    #+#             */
+/*   Updated: 2025/10/10 17:10:03 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+char	*ft_strchr(const char *str, int init)
 {
-	if (c >= 65 && c <= 90)
-		c = c + 32;
-	else
-		return (c);
-	return (c);
+	int i;
+	char *tmp_str;
+
+	i = 0;
+	tmp_str = (char *)str;
+	while (str[i] != '\0')
+	{
+		if (str[i] == init)
+			return (&tmp_str[i]);
+		i++;
+	}
+	return (NULL);
 }
