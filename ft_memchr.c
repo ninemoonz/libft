@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 16:51:50 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/13 11:13:47 by kkweon           ###   ########.fr       */
+/*   Created: 2025/10/13 11:14:17 by kkweon            #+#    #+#             */
+/*   Updated: 2025/10/13 11:32:28 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	unsigned int i;
-	char *s1_c;
-	char *s2_c;
+#include <stdio.h>
+#include <string.h>
 
+void	*ft_memchr(const void *str, int c, size_t n)
+{
+	char	*tmp_str;
+	size_t	i;
+
+	tmp_str = (char *)str;
 	i = 0;
-	s1_c = (char *)s1;
-	s2_c = (char *)s2;
-	while (i < n && s1[i] == s2[i])
+	if (n == 0)
+		return (NULL);
+	while (i <= n && tmp_str[i] != c)
+	{
 		i++;
-	return (s1_c[i] - s2_c[i]);
+	}
+	return (&tmp_str[i]);
+}
+
+int	main(void)
+{
+	char *str1 = "this is string 1";
+	char *res;
+
+	printf("before: %s\n", str1);
+	res = ft_memchr(str1 + 3, 't', 10);
+	printf("after: %s\n", res);
+	return (0);
 }
