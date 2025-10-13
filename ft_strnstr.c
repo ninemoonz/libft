@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 12:56:08 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/13 17:11:04 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/13 17:33:48 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,34 +26,35 @@ char	*ft_strnstr(const char *big, const char *small, size_t len)
 	if (small == NULL || small[0] == 0)
 		return (tmp_big);
 	i = 0;
-	while (tmp_big[i] != '\0' && len > 0)
+	while (tmp_big[i] != '\0' && (len - 1) > 0)
 	{
 		j = 0;
 		while (tmp_small[j] != '\0')
 		{
-			if (tmp_big[i + j] != tmp_small[j])
+			if (tmp_big[i + j] == tmp_small[j])
+				j++;
+			else
 				break ;
-			j++;
 		}
 		if (tmp_small[j] == '\0')
 			return (&tmp_big[i]);
 		i++;
 		len--;
 	}
-	return (NULL);
+	return (0);
 }
 
 void	strnstr_check(char *str1, char *str2, size_t len)
 {
-	printf("strnstr result: %s\n\n", strnstr(str1, str2, len));
-	printf("ft_strnstr result: %s\n", ft_strnstr(str1, str2, len));
+	printf("\nstrnstr result: %s\n", strnstr(str1, str2, len));
+	printf("ft_strnstr result: %s\n\n", ft_strnstr(str1, str2, len));
 }
 
 int	main(void)
 {
 	char *big_str = "that is a big string";
-	char *small_str = "big";
-	strnstr_check(big_str, small_str, strlen(big_str));
+	char *small_str = "ig";
+	strnstr_check(big_str, small_str, 13);
 
 	return (0);
 }
