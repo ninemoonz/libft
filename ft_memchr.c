@@ -6,12 +6,16 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 11:14:17 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/13 11:32:28 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/13 11:34:18 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
+
+// difference of this ft_memchr and ft_strchar is the third argument.
+// strchr goes till the null terminator of t a string for search.
+// memchar searches only until the size_t byte.
 
 void	*ft_memchr(const void *str, int c, size_t n)
 {
