@@ -6,13 +6,14 @@
 /*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 14:50:53 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/15 21:17:11 by koodal           ###   ########.fr       */
+/*   Updated: 2025/10/15 21:26:52 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 int	ft_isspace(char c)
 {
 	if (c == ' ' || c == '\f' || c == '\n' || c == '\r' || c == '\t' || c == '\v')
@@ -26,24 +27,26 @@ int ft_atoi(const char *str)
 	int neg;
 	int i;
 	int tot;
-	char *tmp;
 
 	neg = 1;
 	i = 0;
 	tot = 0;
-	tmp = (char *)str;
-	while(ft_isspace(tmp[i]) == 1)
+	while (ft_isspace(str[i]) == 1)
 		i++;
-	if (tmp[i] == '+' && tmp[i + 1] != '-')
-		i++;
-	if (tmp[i] == '-')
+	if (str[i] == '+')
+	{
+		if (str[i + 1] != '-')
+			i++;
+	}
+	else if (str[i] == '-')
 	{
 		neg = -1;
 		i++;
 	}
-	while (tmp[i] >= '0' && tmp[i] <= '9')
+	
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		tot = (tot * 10) + (tmp[i] - '0');
+		tot = (tot * 10) + (str[i] - '0');
 		i++;
 	}
 	return (tot * neg);
@@ -51,7 +54,7 @@ int ft_atoi(const char *str)
 
 int	main(void)
 {
-	char *str = "   	     123a123";
+	char *str = "   	     -123a123";
 	int res;
 	int res2;
 
