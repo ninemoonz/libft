@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 12:56:08 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/15 14:48:19 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/15 14:50:39 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strnstr(const char *big, const char *small, size_t len)
 	while (tmp_big[i] && i < len)
 	{
 		j = 0;
-		while (tmp_big[i + j] == tmp_small[j] && i + j < len)
+		while (tmp_big[i + j] == tmp_small[j])
 		{
 			if (i + j < len)
 			{
