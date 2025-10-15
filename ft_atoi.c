@@ -6,7 +6,7 @@
 /*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 14:50:53 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/15 21:12:01 by koodal           ###   ########.fr       */
+/*   Updated: 2025/10/15 21:17:11 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,20 +34,30 @@ int ft_atoi(const char *str)
 	tmp = (char *)str;
 	while(ft_isspace(tmp[i]) == 1)
 		i++;
+	if (tmp[i] == '+' && tmp[i + 1] != '-')
+		i++;
+	if (tmp[i] == '-')
+	{
+		neg = -1;
+		i++;
+	}
 	while (tmp[i] >= '0' && tmp[i] <= '9')
 	{
 		tot = (tot * 10) + (tmp[i] - '0');
 		i++;
 	}
-	return (tot);
+	return (tot * neg);
 }
 
 int	main(void)
 {
-	char *str = "   	        123";
+	char *str = "   	     123a123";
 	int res;
+	int res2;
 
 	res = ft_atoi(str);
-	printf("%d\n", res);
+	res2 = atoi(str);
+	printf("ft_atoi: %d\n", res);
+	printf("atoi: %d\n", res2);
 	return (0);
 }
