@@ -3,58 +3,51 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
+/*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 14:50:53 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/15 17:59:55 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/15 21:12:01 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-char	*ft_space(const char *str)
+int	ft_isspace(char c)
 {
-	char	*tmp;
+	if (c == ' ' || c == '\f' || c == '\n' || c == '\r' || c == '\t' || c == '\v')
+		return (1);
+	else
+		return (0);
+}
 
+int ft_atoi(const char *str)
+{
+	int neg;
+	int i;
+	int tot;
+	char *tmp;
+
+	neg = 1;
+	i = 0;
+	tot = 0;
 	tmp = (char *)str;
-	while ((*tmp >= 0 && *tmp <= 31) || *tmp == ' ')
-		tmp++;
-	return (tmp);
-}
-
-int	ft_atoi(const char *str)
-{
-	int	neg_flag;
-	int	res;
-
-	str = ft_space(str);
-	neg_flag = 1;
-	res = 0;
-	if (*str == '-')
-		neg_flag = neg_flag * -1;
-	while (*str >= '0' && *str <= '9')
+	while(ft_isspace(tmp[i]) == 1)
+		i++;
+	while (tmp[i] >= '0' && tmp[i] <= '9')
 	{
-		res = (res * 10) + (*str - '0');
+		tot = (tot * 10) + (tmp[i] - '0');
+		i++;
 	}
-	return (res * neg_flag);
-}
-
-void	atoi_checker(const char *str)
-{
-	int	res;
-	int	ft_res;
-
-	res = atoi(str);
-	ft_res = ft_atoi(str);
-	printf("res: %d\n", res);
-	printf("ft_res: %d\n", ft_res);
+	return (tot);
 }
 
 int	main(void)
 {
-	char *str = "123";
-	atoi_checker(str);
+	char *str = "   	        123";
+	int res;
+
+	res = ft_atoi(str);
+	printf("%d\n", res);
 	return (0);
 }
