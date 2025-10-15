@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 14:50:53 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/15 15:25:10 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/15 17:59:55 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,31 @@
 #include <stdlib.h>
 #include <string.h>
 
+char	*ft_space(const char *str)
+{
+	char	*tmp;
+
+	tmp = (char *)str;
+	while ((*tmp >= 0 && *tmp <= 31) || *tmp == ' ')
+		tmp++;
+	return (tmp);
+}
+
 int	ft_atoi(const char *str)
 {
-	char	*tmp_str;
-	int		i;
-	int		res_i;
-	int		flag;
+	int	neg_flag;
+	int	res;
 
-	tmp_str = (char *)str;
-	i = 0;
-	res_i = 0;
-	flag = 1;
-	while (tmp_str[i])
+	str = ft_space(str);
+	neg_flag = 1;
+	res = 0;
+	if (*str == '-')
+		neg_flag = neg_flag * -1;
+	while (*str >= '0' && *str <= '9')
 	{
-		if (tmp_str[i] == 43)
-			i++;
-		if (tmp_str[i] == 45)
-			flag = flag * -1;
-		if (tmp_str[i] >= 48 && tmp_str[i] <= 57)
-		{
-			if (tmp_str[i + 1] < 48 || tmp_str[i] > 58)
-				break ;
-			res_i = (res_i * 10) + tmp_str[i] - 48;
-		}
-		i++;
+		res = (res * 10) + (*str - '0');
 	}
-	return (res_i * flag);
+	return (res * neg_flag);
 }
 
 void	atoi_checker(const char *str)
@@ -52,9 +51,10 @@ void	atoi_checker(const char *str)
 	printf("res: %d\n", res);
 	printf("ft_res: %d\n", ft_res);
 }
+
 int	main(void)
 {
-	char *str = "   --12a3";
+	char *str = "123";
 	atoi_checker(str);
 	return (0);
 }
