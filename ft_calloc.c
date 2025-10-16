@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 11:27:29 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/16 12:18:08 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/16 12:58:11 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ void	calloc_cmp(size_t nitems, size_t size)
 
 int	main(void)
 {
-	calloc_cmp(10, sizeof(int));
+	calloc_cmp(200, sizeof(int));
 	return (0);
 }
