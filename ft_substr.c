@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 12:57:19 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/16 15:22:26 by kkweon           ###   ########.fr       */
+/*   Created: 2025/10/16 15:22:48 by kkweon            #+#    #+#             */
+/*   Updated: 2025/10/16 16:15:32 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,36 +24,32 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strdup(const char *s)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	int		tot_len;
+	char	*dest_mem;
 	int		i;
-	size_t	len;
-	char	*dup;
 
-	len = ft_strlen(s);
-	dup = (char *)malloc((len + 1) * sizeof(char));
-	if (dup == NULL)
-		return (NULL);
+	tot_len = ft_strlen(s);
+	dest_mem = (char *)malloc((len + 1) * sizeof(char));
 	i = 0;
-	while (s[i])
+	while (i < len)
 	{
-		dup[i] = s[i];
+		dest_mem[i] = s[start];
 		i++;
+		start++;
 	}
-	dup[i] = '\0';
-	return (dup);
+	dest_mem[i] = '\0';
+	return (dest_mem);
 }
 
 int	main(void)
 {
-	char *src = "this is a source string";
-	char *dest;
-	char *dest2;
+	char	*src;
+	char	*dest;
 
-	dest = ft_strdup(src);
-	dest2 = strdup(src);
-	printf("%zu\n", ft_strlen(src));
-	printf("ft_strdup result: %s\n", dest);
-	printf("strdup result: %s\n", dest2);
+	src = "this is a source string";
+	dest = ft_substr(src, 7, 7);
+	printf("%s", dest);
 	return (0);
 }
