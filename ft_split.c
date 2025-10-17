@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 15:44:50 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/17 17:02:59 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/17 17:07:05 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_split(char const *s, char c)
 
 int	main(void)
 {
-	char *str = "hellicopter hellicopter";
+	char *str = "helli heli";
 	char sp = 'i';
 	ft_split(str, sp);
 	return (0);
