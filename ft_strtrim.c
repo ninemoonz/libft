@@ -6,12 +6,13 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 16:53:48 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/16 17:01:42 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/17 14:40:43 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 size_t	ft_strlen(const char *str)
 {
@@ -23,26 +24,74 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
+int	set_check(char const *set, char c)
+{
+	int	i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (c == set[i])
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+unsigned int	ft_strlcpy(char *dst, char *src, unsigned int size)
+{
+	int				i;
+	unsigned int	srclen;
+
+	i = 0;
+	srclen = ft_strlen(src);
+	while (i < (size - 1))
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (srclen);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*tmp;
-	int		i;
+	int			i;
+	int			j;
+	int			k;
+	int			len;
+	const char	*start;
+	const char	*end;
+	char		*tmp;
 
-	tmp = (char *)s1;
+	len = ft_strlen(s1) - 1;
 	i = 0;
-	while (tmp[i])
+	while (set_check(set, s1[i]) > 0)
+		i++;
+	start = &s1[i];
+	while (set_check(set, s1[len]) > 0)
+		len--;
+	end = &s1[len];
+	j = 0;
+	while (end >= start)
 	{
-		if ()
+		j++;
+		end--;
 	}
-	return ();
-	// s1: The string to be trimmed.
-	// set: The string containing the set of characters to be removed.
+	tmp = (char *)malloc((j + 1) * sizeof(char));
+	if (tmp == NULL)
+		return (NULL);
+	ft_strlcpy(tmp, (char *)start, j + 1);
+	return (tmp);
 }
 
 int	main(void)
 {
-	char *str = "this is the string to be trimmed";
-	char *trim = "is";
+	char *str = "asdzzzzzzasd";
+	char *trim = "asd";
+	char *res;
+	res = ft_strtrim(str, trim);
+	printf("%s\n", res);
 
 	return (0);
 }
