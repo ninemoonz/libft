@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 16:53:48 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/17 14:40:43 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/17 15:58:06 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	int			i;
 	int			j;
-	int			k;
 	int			len;
 	const char	*start;
 	const char	*end;
@@ -87,7 +86,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 int	main(void)
 {
-	char *str = "asdzzzzzzasd";
+	char *str = "asddzzza a azzzaasd";
 	char *trim = "asd";
 	char *res;
 	res = ft_strtrim(str, trim);
