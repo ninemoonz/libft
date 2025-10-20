@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 16:16:08 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/16 16:53:08 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/20 16:15:15 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 int	main(void)
 {
-	char *str1 = "this is a long strong string ";
-	char *str2 = "can you join this two?";
+	char *str1 = "asdfsadfsadfsadfasdf ";
+	char *str2 = "czxvcxzvxzvcxzvcxzvc";
 	char *des;
 
 	des = ft_strjoin(str1, str2);
