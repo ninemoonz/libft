@@ -6,20 +6,16 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 12:56:08 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/15 14:50:39 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/22 16:03:08 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <bsd/string.h>
-#include <stdio.h>
-#include <string.h>
-
 char	*ft_strnstr(const char *big, const char *small, size_t len)
 {
-	size_t	i;
-	size_t	j;
-	char	*tmp_big;
-	char	*tmp_small;
+	size_t i;
+	size_t j;
+	char *tmp_big;
+	char *tmp_small;
 
 	tmp_big = (char *)big;
 	tmp_small = (char *)small;
@@ -44,22 +40,4 @@ char	*ft_strnstr(const char *big, const char *small, size_t len)
 		i++;
 	}
 	return (NULL);
-}
-
-void	strnstr_check(char *str1, char *str2, size_t len)
-{
-	printf("\nstrnstr result: %s\n", strnstr(str1, str2, len));
-	printf("ft_strnstr result: %s\n\n", ft_strnstr(str1, str2, len));
-}
-
-int	main(void)
-{
-	char *big_str = "that is a big string";
-	char *small_str = "ig";
-	strnstr_check(big_str, small_str, 0);
-	strnstr_check(big_str, small_str, 11);
-	strnstr_check(big_str, small_str, 12);
-	strnstr_check(big_str, small_str, strlen(big_str));
-
-	return (0);
 }

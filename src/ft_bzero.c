@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 14:30:03 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/22 14:55:53 by kkweon           ###   ########.fr       */
+/*   Created: 2025/10/09 11:01:06 by kkweon            #+#    #+#             */
+/*   Updated: 2025/10/22 15:42:05 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-
-void	ft_putchar_fd(char c, int fd)
+void	ft_bzero(void *str, unsigned int n)
 {
-	write(fd, &c, 1);
-}
+	unsigned int i;
+	char *char_p;
 
-void	ft_putnbr_fd(int n, int fd)
-{
-	if (n == -2147483648)
-		write(fd, "-2147483648", 11);
-	if (n < 0)
+	char_p = str;
+	i = 0;
+	while (n > 0)
 	{
-		ft_putchar_fd('-', fd);
-		n = -n;
+		*char_p = 0;
+		char_p++;
+		n--;
 	}
-	if (n >= 10)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd(n % 10 + '0', fd);
-	}
-	else
-		ft_putchar_fd(n + '0', fd);
 }

@@ -1,18 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 15:22:48 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/16 16:15:32 by kkweon           ###   ########.fr       */
+/*   Created: 2025/10/16 16:16:08 by kkweon            #+#    #+#             */
+/*   Updated: 2025/10/22 16:02:46 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 size_t	ft_strlen(const char *str)
 {
@@ -24,32 +20,30 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		tot_len;
-	char	*dest_mem;
 	int		i;
-
-	tot_len = ft_strlen(s);
-	dest_mem = (char *)malloc((len + 1) * sizeof(char));
-	i = 0;
-	while (i < len)
-	{
-		dest_mem[i] = s[start];
-		i++;
-		start++;
-	}
-	dest_mem[i] = '\0';
-	return (dest_mem);
-}
-
-int	main(void)
-{
-	char	*src;
+	int		j;
+	int		tot_len;
 	char	*dest;
 
-	src = "this is a source string";
-	dest = ft_substr(src, 7, 7);
-	printf("%s", dest);
-	return (0);
+	tot_len = ft_strlen(s1) + ft_strlen(s2);
+	dest = (char *)malloc((tot_len + 1) * sizeof(char));
+	if (dest == NULL)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s1[i])
+	{
+		dest[i] = s1[i];
+		i++;
+	}
+	while (s2[j])
+	{
+		dest[i] = s2[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 14:25:28 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/22 14:29:14 by kkweon           ###   ########.fr       */
+/*   Created: 2025/10/22 14:30:03 by kkweon            #+#    #+#             */
+/*   Updated: 2025/10/22 15:23:40 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,25 @@
 #include <string.h>
 #include <unistd.h>
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
-	write(fd, "\n", 1);
+	write(fd, &c, 1);
 }
 
-int	main(void)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char *str = "Hello World";
-	int fd = 1;
-
-	ft_putendl_fd(str, fd);
-	return (0);
+	if (n == -2147483648)
+		write(fd, "-2147483648", 11);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + '0', fd);
+	}
+	else
+		ft_putchar_fd(n + '0', fd);
 }

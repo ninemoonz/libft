@@ -6,18 +6,16 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 11:27:29 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/16 12:58:11 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/22 16:05:12 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <libft.h>
 
 void	*ft_calloc(size_t nitems, size_t size)
 {
-	size_t			i;
-	unsigned char	*tmp;
+	size_t i;
+	unsigned char *tmp;
 
 	i = 0;
 	tmp = malloc(nitems * size); // total bytes to allocate
@@ -29,37 +27,4 @@ void	*ft_calloc(size_t nitems, size_t size)
 		i++;
 	}
 	return (tmp);
-}
-
-void	calloc_cmp(size_t nitems, size_t size)
-{
-	int	*array1;
-	int	*array2;
-
-	size_t i, j;
-	i = 0;
-	array1 = calloc(nitems, size);
-	array2 = ft_calloc(nitems, size);
-	printf("calloc result: ");
-	while (i < nitems)
-	{
-		printf("%d", array1[i]);
-		i++;
-	}
-	j = 0;
-	printf("\n");
-	printf("ft_calloc result: ");
-	while (j < nitems)
-	{
-		printf("%d", array2[j]);
-		j++;
-	}
-	free(array1);
-	free(array2);
-}
-
-int	main(void)
-{
-	calloc_cmp(200, sizeof(int));
-	return (0);
 }

@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/09 11:01:06 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/09 14:31:12 by kkweon           ###   ########.fr       */
+/*   Created: 2025/10/22 14:09:59 by kkweon            #+#    #+#             */
+/*   Updated: 2025/10/22 16:01:57 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *str, unsigned int n)
-{
-	unsigned int i;
-	char *char_p;
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
-	char_p = str;
+void	ft_putstr_fd(char *s, int fd)
+{
+	int	i;
+
 	i = 0;
-	while (n > 0)
+	while (s[i])
 	{
-		*char_p = 0;
-		char_p++;
-		n--;
+		write(fd, &s[i], 1);
+		i++;
 	}
 }

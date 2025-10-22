@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/10 13:53:47 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/10 17:23:38 by kkweon           ###   ########.fr       */
+/*   Created: 2025/10/16 15:22:48 by kkweon            #+#    #+#             */
+/*   Updated: 2025/10/22 16:03:56 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *str, int init)
+size_t	ft_strlen(const char *str)
 {
-	int i;
-	char *tmp_str;
+	int	i;
 
 	i = 0;
-	// const variables can't be motified or returned.
-	// therefore need to assign and type cast the constant pointer to char pointer.
-	// as below:
-	tmp_str = (char *)str;
 	while (str[i] != '\0')
-	{
-		if (str[i] == init)
-			return (&tmp_str[i]);
 		i++;
+	return (i);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	int tot_len;
+	char *dest_mem;
+	int i;
+
+	tot_len = ft_strlen(s);
+	dest_mem = (char *)malloc((len + 1) * sizeof(char));
+	i = 0;
+	while (i < len)
+	{
+		dest_mem[i] = s[start];
+		i++;
+		start++;
 	}
-	return (NULL);
+	dest_mem[i] = '\0';
+	return (dest_mem);
 }

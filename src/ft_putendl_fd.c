@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 14:09:59 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/22 14:20:20 by kkweon           ###   ########.fr       */
+/*   Created: 2025/10/22 14:25:28 by kkweon            #+#    #+#             */
+/*   Updated: 2025/10/22 16:01:50 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <string.h>
 #include <unistd.h>
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
@@ -25,13 +25,5 @@ void	ft_putstr_fd(char *s, int fd)
 		write(fd, &s[i], 1);
 		i++;
 	}
-}
-
-int	main(void)
-{
-	char *str = "Hello World";
-	int fd = 1;
-
-	ft_putstr_fd(str, fd);
-	return (0);
+	write(fd, "\n", 1);
 }

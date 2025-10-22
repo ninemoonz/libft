@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 16:53:48 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/17 15:58:06 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/22 16:03:44 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,12 @@ unsigned int	ft_strlcpy(char *dst, char *src, unsigned int size)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int			i;
-	int			j;
-	int			len;
-	const char	*start;
-	const char	*end;
-	char		*tmp;
+	int i;
+	int j;
+	int len;
+	const char *start;
+	const char *end;
+	char *tmp;
 
 	len = ft_strlen(s1) - 1;
 	i = 0;
@@ -82,15 +82,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	ft_strlcpy(tmp, (char *)start, j + 1);
 	return (tmp);
-}
-
-int	main(void)
-{
-	char *str = "asddzzza a azzzaasd";
-	char *trim = "asd";
-	char *res;
-	res = ft_strtrim(str, trim);
-	printf("%s\n", res);
-
-	return (0);
 }

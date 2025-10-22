@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/09 15:05:17 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/10 14:44:27 by kkweon           ###   ########.fr       */
+/*   Created: 2025/10/10 13:53:47 by kkweon            #+#    #+#             */
+/*   Updated: 2025/10/22 16:12:36 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dst, void *src, size_t n)
-{
-	char *tmp_dst;
-	char *tmp_src;
-	unsigned int i;
-	unsigned int d_len;
+#include <libft.h>
 
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	tmp_dst = (char *)dst;
-	tmp_src = (char *)src;
+char	*ft_strchr(const char *str, int init)
+{
+	int i;
+	char *tmp_str;
+
 	i = 0;
-	if (tmp_dst > tmp_src)
+	// const variables can't be motified or returned.
+	// therefore need to assign and type cast the constant pointer to char pointer.
+	// as below:
+	tmp_str = (char *)str;
+	while (str[i] != '\0')
 	{
-		while (n > 0)
-		{
-			n--;
-			tmp_dst[n] = tmp_src[n];
-		}
+		if (str[i] == init)
+			return (&tmp_str[i]);
+		i++;
 	}
-	else
-	{
-		while (i < n)
-		{
-			tmp_dst[i] = tmp_src[i];
-			i++;
-		}
-	}
-	return (dst);
+	return (NULL);
 }

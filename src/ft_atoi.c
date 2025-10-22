@@ -6,13 +6,9 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 14:50:53 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/16 11:04:21 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/22 15:42:02 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 int	ft_isspace(char c)
 {
@@ -25,9 +21,9 @@ int	ft_isspace(char c)
 
 int	ft_atoi(const char *str)
 {
-	int	neg;
-	int	i;
-	int	tot;
+	int neg;
+	int i;
+	int tot;
 
 	neg = 1;
 	i = 0;
@@ -50,17 +46,4 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (tot * neg);
-}
-
-int	main(void)
-{
-	char *str = "   			-123a123";
-	int res;
-	int res2;
-
-	res = ft_atoi(str);
-	res2 = atoi(str);
-	printf("ft_atoi: %d\n", res);
-	printf("atoi: %d\n", res2);
-	return (0);
 }

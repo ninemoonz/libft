@@ -6,13 +6,9 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 12:57:19 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/16 15:22:26 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/22 16:02:39 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 size_t	ft_strlen(const char *str)
 {
@@ -42,18 +38,4 @@ char	*ft_strdup(const char *s)
 	}
 	dup[i] = '\0';
 	return (dup);
-}
-
-int	main(void)
-{
-	char *src = "this is a source string";
-	char *dest;
-	char *dest2;
-
-	dest = ft_strdup(src);
-	dest2 = strdup(src);
-	printf("%zu\n", ft_strlen(src));
-	printf("ft_strdup result: %s\n", dest);
-	printf("strdup result: %s\n", dest2);
-	return (0);
 }
