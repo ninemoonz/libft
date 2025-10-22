@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 16:16:17 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/20 17:00:48 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/22 13:34:53 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,7 @@ char	*ft_itoa(int n)
 {
 	char	*tmp;
 	char	*dest;
-	char	numchar;
 	int		count;
-	int		i;
 
 	count = len_count(n);
 	printf("%d", count);
