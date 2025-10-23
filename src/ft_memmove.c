@@ -6,20 +6,17 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 15:05:17 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/23 15:18:22 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/23 15:49:51 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <libft.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <libft.h>
 
-void	*ft_memmove(void *dst, void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	char	*tmp_dst;
-	char	*tmp_src;
-	size_t	i;
+	char		*tmp_dst;
+	const char	*tmp_src;
+	size_t		i;
 
 	if (!dst && !src)
 		return (NULL);
@@ -28,11 +25,8 @@ void	*ft_memmove(void *dst, void *src, size_t n)
 	i = 0;
 	if (tmp_dst > tmp_src)
 	{
-		while (n > 0)
-		{
+		while (n-- > 0)
 			tmp_dst[n] = tmp_src[n];
-			n--;
-		}
 	}
 	else
 	{
@@ -42,14 +36,5 @@ void	*ft_memmove(void *dst, void *src, size_t n)
 			i++;
 		}
 	}
-	return (dst);
-}
-int	main(void)
-{
-	char *dst = "try this";
-	char *src = "yes";
-	char *res;
-
-	res = ft_memmove(dst, src, 6);
-	printf("%s\n", res);
+	return (tmp_dst);
 }
