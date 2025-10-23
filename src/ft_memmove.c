@@ -6,19 +6,22 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 15:05:17 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/22 16:10:47 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/23 15:13:50 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+//#include <libft.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 void	*ft_memmove(void *dst, void *src, size_t n)
 {
-	char *tmp_dst;
-	char *tmp_src;
-	unsigned int i;
+	char	*tmp_dst;
+	char	*tmp_src;
+	size_t	i;
 
-	if (dst == NULL && src == NULL)
+	if (!dst && !src)
 		return (NULL);
 	tmp_dst = (char *)dst;
 	tmp_src = (char *)src;
@@ -27,8 +30,8 @@ void	*ft_memmove(void *dst, void *src, size_t n)
 	{
 		while (n > 0)
 		{
-			n--;
 			tmp_dst[n] = tmp_src[n];
+			n--;
 		}
 	}
 	else
@@ -40,4 +43,13 @@ void	*ft_memmove(void *dst, void *src, size_t n)
 		}
 	}
 	return (dst);
+}
+int	main(void)
+{
+	char *str = "try this";
+	char *src = "yes";
+	char *res;
+
+	res = ft_memmove(str, src, 1);
+	printf("%s\n", res);
 }
