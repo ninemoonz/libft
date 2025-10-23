@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 16:53:48 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/23 14:53:25 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/23 15:24:49 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 		len--;
 	end = &s1[len];
 	j = 0;
-	while (end >= start)s		
-	{
-		j++;
-		end--;
-	}
+	while (end >= start)
+		s
+		{
+			j++;
+			end--;
+		}
 	tmp = (char *)malloc((j + 1) * sizeof(char));
 	if (tmp == NULL)
 		return (NULL);

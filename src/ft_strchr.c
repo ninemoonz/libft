@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 13:53:47 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/22 16:12:36 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/23 15:21:39 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,10 @@
 
 char	*ft_strchr(const char *str, int init)
 {
-	int i;
-	char *tmp_str;
+	int		i;
+	char	*tmp_str;
 
 	i = 0;
-	// const variables can't be motified or returned.
-	// therefore need to assign and type cast the constant pointer to char pointer.
-	// as below:
 	tmp_str = (char *)str;
 	while (str[i] != '\0')
 	{

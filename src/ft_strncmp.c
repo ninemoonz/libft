@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 16:51:50 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/23 14:52:56 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/23 15:18:00 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
-	char *s1_c;
-	char *s2_c;
+	size_t	i;
+	char	*s1_c;
+	char	*s2_c;
 
 	i = 0;
 	s1_c = (char *)s1;

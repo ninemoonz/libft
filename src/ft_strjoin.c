@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 16:16:08 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/23 14:42:51 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/23 15:21:56 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
-	int j;
-	int tot_len;
-	char *dest;
+	int		i;
+	int		j;
+	int		tot_len;
+	char	*dest;
 
 	tot_len = ft_strlen(s1) + ft_strlen(s2);
 	dest = (char *)malloc((tot_len + 1) * sizeof(char));

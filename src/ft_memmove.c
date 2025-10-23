@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 15:05:17 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/23 15:13:50 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/23 15:18:22 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ void	*ft_memmove(void *dst, void *src, size_t n)
 }
 int	main(void)
 {
-	char *str = "try this";
+	char *dst = "try this";
 	char *src = "yes";
 	char *res;
 
-	res = ft_memmove(str, src, 1);
+	res = ft_memmove(dst, src, 6);
 	printf("%s\n", res);
 }
