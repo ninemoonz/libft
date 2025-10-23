@@ -6,30 +6,20 @@
 /*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 17:11:40 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/14 14:23:36 by koodal           ###   ########.fr       */
+/*   Updated: 2025/10/23 12:49:38 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	i;
+#include <libft.h>
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-unsigned int	ft_strlcpy(char *dst, char *src, unsigned int size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	int				i;
-	unsigned int	srclen;
+	size_t	srclen;
 
 	i = 0;
 	srclen = ft_strlen(src);
-	while (i < (size - 1))
+	while (i < (dstsize - 1))
 	{
 		dst[i] = src[i];
 		i++;

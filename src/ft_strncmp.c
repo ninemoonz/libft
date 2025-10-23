@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
+/*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 16:51:50 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/13 11:13:47 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/23 12:42:40 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
