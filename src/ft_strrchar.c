@@ -6,21 +6,11 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 17:12:29 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/10 17:50:24 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/23 14:47:15 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+#include <libft.h>
 
 char	*ft_strrchr(const char *str, int init)
 {

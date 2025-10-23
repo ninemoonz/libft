@@ -6,9 +6,11 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:50:45 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/16 16:02:05 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/23 14:52:36 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 size_t	ft_strlen(const char *str)
 {

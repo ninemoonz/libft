@@ -6,29 +6,19 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 14:38:03 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/08 17:47:14 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/23 14:51:44 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	i;
+#include <libft.h>
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-unsigned int	ft_strlcat(char *dst, char *src, unsigned int dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int dst_len;
-	unsigned int src_len;
-	unsigned int tot_len;
-	unsigned int buffer_len;
-	unsigned int i;
+	size_t	dst_len;
+	size_t	src_len;
+	size_t	tot_len;
+	size_t	buffer_len;
+	size_t	i;
 
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
@@ -37,6 +27,14 @@ unsigned int	ft_strlcat(char *dst, char *src, unsigned int dstsize)
 	if (dst_len >= dstsize)
 		return (tot_len);
 	i = 0;
+	while (src_len)
+	{
+		i = 0;
+		while (src[i] != '\0')
+			i++;
+		src_len--;
+		return (i);
+	}
 	while (src[i] != '\0' && buffer_len--)
 	{
 		dst[dst_len + i] = src[i];

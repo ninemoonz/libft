@@ -6,19 +6,11 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 12:57:19 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/22 16:02:39 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/23 14:42:47 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+#include <libft.h>
 
 char	*ft_strdup(const char *s)
 {

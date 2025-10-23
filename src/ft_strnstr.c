@@ -6,9 +6,11 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 12:56:08 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/22 16:03:08 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/23 14:53:17 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 char	*ft_strnstr(const char *big, const char *small, size_t len)
 {

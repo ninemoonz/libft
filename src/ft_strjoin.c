@@ -6,26 +6,18 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 16:16:08 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/22 16:02:46 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/23 14:42:51 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+#include <libft.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	int		j;
-	int		tot_len;
-	char	*dest;
+	int i;
+	int j;
+	int tot_len;
+	char *dest;
 
 	tot_len = ft_strlen(s1) + ft_strlen(s2);
 	dest = (char *)malloc((tot_len + 1) * sizeof(char));
