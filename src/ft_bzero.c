@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
+/*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 11:01:06 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/23 15:04:01 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/24 19:13:15 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 void	ft_bzero(void *str, size_t n)
 {
-	size_t	i;
 	char	*char_p;
 
 	char_p = str;
-	i = 0;
 	while (n > 0)
 	{
 		*char_p = 0;
@@ -26,3 +24,4 @@ void	ft_bzero(void *str, size_t n)
 		n--;
 	}
 }
+

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
+/*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 17:48:01 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/23 15:19:35 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/24 19:14:29 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 void	*ft_memset(void *dest, int c, size_t count)
 {
-	size_t	i;
 	char	*char_p;
 
 	char_p = dest;
-	i = 0;
 	while (count > 0)
 	{
 		*char_p = c;
