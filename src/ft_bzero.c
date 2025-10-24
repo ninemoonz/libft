@@ -6,14 +6,16 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 11:01:06 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/22 15:42:05 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/23 15:04:01 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *str, unsigned int n)
+#include <libft.h>
+
+void	ft_bzero(void *str, size_t n)
 {
-	unsigned int i;
-	char *char_p;
+	size_t	i;
+	char	*char_p;
 
 	char_p = str;
 	i = 0;

@@ -6,7 +6,11 @@
 /*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 14:50:45 by kkweon            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2025/10/23 12:42:28 by koodal           ###   ########.fr       */
+=======
+/*   Updated: 2025/10/23 15:29:11 by kkweon           ###   ########.fr       */
+>>>>>>> b0f3618804ce3e21ada0cbc7f993041dd41beced
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +18,7 @@
 
 size_t	ft_strlen(const char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')

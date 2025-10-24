@@ -6,7 +6,11 @@
 /*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 16:51:50 by kkweon            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2025/10/23 12:42:40 by koodal           ###   ########.fr       */
+=======
+/*   Updated: 2025/10/23 15:18:00 by kkweon           ###   ########.fr       */
+>>>>>>> b0f3618804ce3e21ada0cbc7f993041dd41beced
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +18,9 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int i;
-	char *s1_c;
-	char *s2_c;
+	size_t	i;
+	char	*s1_c;
+	char	*s2_c;
 
 	i = 0;
 	s1_c = (char *)s1;

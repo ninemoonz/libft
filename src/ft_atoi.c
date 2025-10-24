@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 14:50:53 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/22 15:42:02 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/23 15:02:41 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	ft_isspace(char c)
 
 int	ft_atoi(const char *str)
 {
-	int neg;
-	int i;
-	int tot;
+	int	neg;
+	int	i;
+	int	tot;
 
 	neg = 1;
 	i = 0;

@@ -6,14 +6,16 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 17:48:01 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/22 16:11:15 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/23 15:19:35 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *dest, int c, unsigned int count)
+#include <libft.h>
+
+void	*ft_memset(void *dest, int c, size_t count)
 {
-	unsigned int i;
-	char *char_p;
+	size_t	i;
+	char	*char_p;
 
 	char_p = dest;
 	i = 0;

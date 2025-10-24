@@ -6,7 +6,11 @@
 /*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 12:56:08 by kkweon            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2025/10/23 12:42:50 by koodal           ###   ########.fr       */
+=======
+/*   Updated: 2025/10/23 15:22:22 by kkweon           ###   ########.fr       */
+>>>>>>> b0f3618804ce3e21ada0cbc7f993041dd41beced
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +18,10 @@
 
 char	*ft_strnstr(const char *big, const char *small, size_t len)
 {
-	size_t i;
-	size_t j;
-	char *tmp_big;
-	char *tmp_small;
+	size_t	i;
+	size_t	j;
+	char	*tmp_big;
+	char	*tmp_small;
 
 	tmp_big = (char *)big;
 	tmp_small = (char *)small;

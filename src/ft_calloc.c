@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 11:27:29 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/22 16:05:12 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/23 15:05:01 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_calloc(size_t nitems, size_t size)
 {
-	size_t i;
-	unsigned char *tmp;
+	size_t			i;
+	unsigned char	*tmp;
 
 	i = 0;
-	tmp = malloc(nitems * size); // total bytes to allocate
+	tmp = malloc(nitems * size);
 	if (tmp == NULL)
 		return (NULL);
 	while (i < nitems)
