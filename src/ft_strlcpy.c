@@ -3,37 +3,70 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
+/*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 17:11:40 by kkweon            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2025/10/23 12:49:38 by koodal           ###   ########.fr       */
-=======
-/*   Updated: 2025/10/23 14:52:20 by kkweon           ###   ########.fr       */
->>>>>>> b0f3618804ce3e21ada0cbc7f993041dd41beced
+/*   Updated: 2025/10/24 16:25:45 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+//#include <libft.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-<<<<<<< HEAD
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
-{
-	int				i;
-=======
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
->>>>>>> b0f3618804ce3e21ada0cbc7f993041dd41beced
-	size_t	srclen;
 
 	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	i;
+	size_t	srclen;
+
 	srclen = ft_strlen(src);
-	while (i < (dstsize - 1))
+	i = 0;
+	if (dstsize == 0)
+		return (srclen);
+	while ((i < (dstsize - 1)) && src[i] != '\0')
 	{
 		dst[i] = src[i];
 		i++;
 	}
 	dst[i] = '\0';
 	return (srclen);
+}
+
+void strlcpy_check (char *dst, const char *src, size_t dstsize)
+{
+	int strlcpy_res;
+	int ft_strlcpy_res;
+	char *dst1;
+	char *dst2;
+
+	dst1 = dst;
+	dst2 = dst;
+
+	strlcpy_res = strlcpy(dst1, src, dstsize);
+	ft_strlcpy_res = ft_strlcpy(dst2, src, dstsize);
+	printf("strlcpy return value: %d\n", strlcpy_res);
+	printf("ft_strlcpy return value: %d\n", ft_strlcpy_res);
+	printf("strlcpy dst result: %s\n", dst1);
+	printf("ft_strlcpy dst result: %s\n", dst2);
+}
+
+int main(void)
+{
+	char dst[10];
+	char *src = "source";
+	int strlen;
+
+	strlcpy_check(dst, src, 5);
+	return (0);
 }
