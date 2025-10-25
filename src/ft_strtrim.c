@@ -6,11 +6,7 @@
 /*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 16:53:48 by kkweon            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2025/10/23 12:43:20 by koodal           ###   ########.fr       */
-=======
-/*   Updated: 2025/10/23 15:24:49 by kkweon           ###   ########.fr       */
->>>>>>> b0f3618804ce3e21ada0cbc7f993041dd41beced
+/*   Updated: 2025/10/25 12:59:32 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +45,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = &s1[len];
 	j = 0;
 	while (end >= start)
-		s
 		{
 			j++;
 			end--;
