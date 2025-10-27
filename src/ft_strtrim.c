@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 16:53:48 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/25 12:59:32 by koodal           ###   ########.fr       */
+/*   Updated: 2025/10/27 16:00:53 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,32 +26,40 @@ int	set_check(char const *set, char c)
 	return (0);
 }
 
+char	*trimmed_str(char const *s1, int i, int len)
+{
+	int		j;
+	char	*trimmed;
+
+	trimmed = (char *)malloc((len - i + 1) * sizeof(char));
+	if (!trimmed)
+		return (NULL);
+	j = 0;
+	while (len - i + 1 > 0)
+	{
+		trimmed[j] = s1[i + j];
+		j++;
+		len--;
+	}
+	trimmed[j] = '\0';
+	ft_strlcpy(trimmed, s1 + i, len + 1);
+	return (trimmed);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int			i;
-	int			j;
 	int			len;
 	const char	*start;
 	const char	*end;
-	char		*tmp;
 
+	if (!s1 || !set)
+		return (NULL);
 	len = ft_strlen(s1) - 1;
 	i = 0;
 	while (set_check(set, s1[i]) > 0)
 		i++;
-	start = &s1[i];
 	while (set_check(set, s1[len]) > 0)
 		len--;
-	end = &s1[len];
-	j = 0;
-	while (end >= start)
-		{
-			j++;
-			end--;
-		}
-	tmp = (char *)malloc((j + 1) * sizeof(char));
-	if (tmp == NULL)
-		return (NULL);
-	ft_strlcpy(tmp, (char *)start, j + 1);
-	return (tmp);
+	return (trimmed_str(s1, i, len));
 }
