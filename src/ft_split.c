@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 15:16:11 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/28 17:38:22 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/28 17:46:55 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	*word_generator(char const *s, char c)
 	return (dest);
 }
 
-void	split_free(char **arr_malloc, int i)
+char	**split_free(char **arr_malloc, int i)
 {
 	while (arr_malloc[i])
 	{
@@ -68,6 +68,7 @@ void	split_free(char **arr_malloc, int i)
 		i++;
 	}
 	free(arr_malloc);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -86,20 +87,28 @@ char	**ft_split(char const *s, char c)
 		while (*s == c)
 			s++;
 		arr_malloc[i] = word_generator(s, c);
+		i++;
+		while (*s && *s != c)
+			s++;
 	}
+	if (arr_malloc[i - 1] == NULL)
+		return (split_free(arr_malloc, i));
+	while (*s && *s != c)
+		s++;
+	arr_malloc[i] = NULL;
 	return (arr_malloc);
 }
 
 int	main(void)
 {
 	int i;
-	char *src = " hello world Hello codam";
+	char *src = "     hello   world    Hello   codam      ";
 	char dl = ' ';
 	char **res = ft_split(src, dl);
 	i = 0;
 	while (res[i])
 	{
-		printf("%s\n", res[i]);
+		printf("%s.\n", res[i]);
 		i++;
 	}
 	return (0);
