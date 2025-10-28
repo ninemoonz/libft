@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 15:16:11 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/28 17:25:35 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/28 17:37:10 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,15 +83,9 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (*s)
 	{
-		while (*s && *s == c)
+		while (*s == c)
 			s++;
-		if (*s && *s != c)
-		{
-			arr_malloc[i] = word_generator(s, c);
-			i++;
-		}
 	}
-	arr_malloc[i] = NULL;
 	return (arr_malloc);
 }
 
