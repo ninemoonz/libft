@@ -6,7 +6,7 @@
 #    By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/23 12:40:37 by koodal            #+#    #+#              #
-#    Updated: 2025/10/28 19:05:13 by kkweon           ###   ########.fr        #
+#    Updated: 2025/10/29 13:53:07 by kkweon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-SRC = \
+src = \
 	ft_atoi.c \
 	ft_bzero.c \
 	ft_calloc.c \
