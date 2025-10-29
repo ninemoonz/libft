@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
+/*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 15:22:48 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/29 17:24:47 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/29 20:56:07 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		tot_len;
 	char	*dest_mem;
 	size_t	i;
 
-	tot_len = ft_strlen(s);
 	dest_mem = (char *)malloc((len + 1) * sizeof(char));
 	if (!dest_mem)
 		return (NULL);

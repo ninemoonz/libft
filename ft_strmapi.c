@@ -3,44 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
+/*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 14:52:14 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/29 17:45:09 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/29 21:12:49 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
-// {
-// 	int		i;
-// 	char	*tmp;
-
-// 	tmp = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
-// 	if (!tmp)
-// 		return (NULL);
-// 	i = 0;
-// 	while (i < ft_strlen(s))
-// 	{
-// 		tmp[i] = 'a';
-// 		i++;
-// 	}
-// 	tmp[i] = '\0';
-// }
-
-char	*ft_check(char const *s)
+char test_func(unsigned int i, char c)
 {
-	int		i;
+	if (c >= 'a' && c <= 'z' && i % 2 == 0)
+		return (c - 32);
+	else
+		return (c);
+}
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	size_t		i;
+	size_t	len;
 	char	*tmp;
 
-	tmp = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!s || !f)
+		return (NULL);
+	len = ft_strlen(s);
+	tmp = (char *)malloc((len + 1) * sizeof(char));
 	if (!tmp)
 		return (NULL);
 	i = 0;
-	while (i < ft_strlen(s))
+	while (i < len)
 	{
-		tmp[i] = 'a';
+		tmp[i] = f(i, s[i]);
 		i++;
 	}
 	tmp[i] = '\0';
@@ -49,7 +44,8 @@ char	*ft_check(char const *s)
 
 int	main(void)
 {
-	char *str = "this is a string";
-	printf("%s\n", ft_check(str));
+	char	*str;
+	str = "hello world!";
+	printf("%s\n", ft_strmapi(str, test_func));
 	return (0);
 }
