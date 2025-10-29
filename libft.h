@@ -6,13 +6,14 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:59:19 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/29 17:19:42 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/10/29 17:42:15 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stddef.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
