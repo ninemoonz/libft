@@ -6,7 +6,7 @@
 /*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 14:52:14 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/29 21:12:49 by koodal           ###   ########.fr       */
+/*   Updated: 2025/10/30 14:33:08 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@ char test_func(unsigned int i, char c)
 		return (c - 32);
 	else
 		return (c);
+}
+
+size_t ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
