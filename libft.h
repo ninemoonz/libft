@@ -6,7 +6,7 @@
 /*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:59:19 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/29 21:27:45 by koodal           ###   ########.fr       */
+/*   Updated: 2025/10/30 19:54:03 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,7 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void    ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 #endif
