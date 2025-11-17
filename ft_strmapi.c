@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 14:52:14 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/30 19:55:44 by koodal           ###   ########.fr       */
+/*   Updated: 2025/11/17 11:58:42 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t		i;
+	size_t	i;
 	size_t	len;
 	char	*tmp;
 

@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 18:33:32 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/29 17:21:01 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/11/17 11:56:02 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,4 @@ char	*ft_itoa(int n)
 	}
 	res[digit] = '\0';
 	return (res);
-}
-
-int	main(void)
-{
-	int num;
-	char *res;
-
-	num = -123;
-	res = ft_itoa(num);
-	printf("%s\n", res);
-	return (0);
 }

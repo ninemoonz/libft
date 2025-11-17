@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 14:34:28 by koodal            #+#    #+#             */
-/*   Updated: 2025/10/30 15:37:14 by koodal           ###   ########.fr       */
+/*   Updated: 2025/11/17 11:58:05 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (s[i])
