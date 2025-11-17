@@ -6,29 +6,29 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 14:31:07 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/29 17:21:06 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/11/17 13:55:31 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, void *src, unsigned int n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char	*char_dst;
-	char	*char_src;
+	unsigned char		*char_dst;
+	const unsigned char	*char_src;
+	size_t				i;
 
-	char_dst = dest;
-	char_src = src;
 	if (!dest && !src)
-	{
 		return (dest);
-	}
-	while (n > 0)
+	if (n == 0)
+		return (dest);
+	char_dst = (unsigned char *)dest;
+	char_src = (const unsigned char *)src;
+	i = 0;
+	while (i < n)
 	{
-		*char_dst = *char_src;
-		char_dst++;
-		char_src++;
-		n--;
+		char_dst[i] = char_src[i];
+		i++;
 	}
 	return (dest);
 }
