@@ -6,11 +6,12 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 16:53:48 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/29 17:22:44 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/11/17 17:35:33 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 int	set_check(char const *set, char c)
 {
@@ -31,18 +32,17 @@ char	*trimmed_str(char const *s1, int i, int len)
 	int		j;
 	char	*trimmed;
 
-	trimmed = (char *)malloc((len - i + 1) * sizeof(char));
+	trimmed = (char *)malloc((len - (i - 1) + 1) * sizeof(char));
 	if (!trimmed)
 		return (NULL);
 	j = 0;
-	while (len - i + 1 > 0)
+	while (len - (i - 1) > 0)
 	{
 		trimmed[j] = s1[i + j];
 		j++;
 		len--;
 	}
 	trimmed[j] = '\0';
-	ft_strlcpy(trimmed, s1 + i, len + 1);
 	return (trimmed);
 }
 
