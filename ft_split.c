@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 15:16:11 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/29 17:21:22 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/11/18 17:01:07 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,24 @@ char	**ft_split(char const *s, char c)
 		split_free(arr_malloc, i);
 	arr_malloc[i] = NULL;
 	return (arr_malloc);
+}
+
+int	main(void)
+{
+	char	*test;
+	char	sp;
+	char	**res;
+	int		i;
+
+	res = NULL;
+	test = "hello world world hello";
+	sp = ' ';
+	*res = *ft_split(test, sp);
+	i = 0;
+	while (res[i])
+	{
+		printf("%s\n", res[i]);
+		i++;
+	}
+	return (0);
 }
