@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 16:53:48 by kkweon            #+#    #+#             */
-/*   Updated: 2025/11/18 10:58:57 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/11/18 16:35:51 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,21 @@ int	set_check(char const *set, char c)
 	return (0);
 }
 
-char	*trimmed_str(char const *s1, int i, int len)
+char	*trimmed_str(char const *s1, size_t i, size_t len)
 {
-	int		j;
+	size_t	j;
 	char	*trimmed;
 
+	if (len <= 0 || i >= ft_strlen(s1))
+		return (ft_strdup(""));
 	trimmed = (char *)malloc((len - (i - 1) + 1) * sizeof(char));
 	if (!trimmed)
 		return (NULL);
 	j = 0;
-	while (len - (i - 1) > 0)
+	while (j < len - (i - 1))
 	{
 		trimmed[j] = s1[i + j];
 		j++;
-		len--;
 	}
 	trimmed[j] = '\0';
 	return (trimmed);
