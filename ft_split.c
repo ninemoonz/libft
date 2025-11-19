@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 15:16:11 by kkweon            #+#    #+#             */
-/*   Updated: 2025/11/19 12:11:08 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/11/19 12:22:59 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,16 @@ void	split_free(char **arr_malloc, int i)
 	free(arr_malloc);
 }
 
+char	**free_error(char **arr, int i)
+{
+	split_free(arr, i);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	int i;
-	char **arr_malloc;
+	int		i;
+	char	**arr_malloc;
 
 	if (!s)
 		return (NULL);
@@ -90,7 +96,7 @@ char	**ft_split(char const *s, char c)
 			break ;
 		arr_malloc[i] = word_generator(s, c);
 		if (arr_malloc[i] == NULL)
-			split_free(arr_malloc, i);
+			return (free_error(arr_malloc, i));
 		i++;
 		while (*s && *s != c)
 			s++;
