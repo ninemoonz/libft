@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 14:50:53 by kkweon            #+#    #+#             */
-/*   Updated: 2025/10/29 17:19:33 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/11/20 17:48:45 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,10 @@ int	ft_atoi(const char *str)
 	tot = 0;
 	while (ft_isspace(str[i]) == 1)
 		i++;
-	if (str[i] == '+')
+	if (str[i] == '+' || str[i] == '-')
 	{
-		if (str[i + 1] != '-')
-			i++;
-	}
-	else if (str[i] == '-')
-	{
-		neg = -1;
+		if (str[i] == '-')
+			neg = -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
