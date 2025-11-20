@@ -6,12 +6,11 @@
 /*   By: kkweon <kkweon@student.codam.nl>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 17:12:29 by kkweon            #+#    #+#             */
-/*   Updated: 2025/11/17 15:55:15 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/11/20 17:16:09 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 char	*ft_strrchr(const char *str, int init)
 {
